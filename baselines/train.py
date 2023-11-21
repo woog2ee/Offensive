@@ -80,7 +80,7 @@ if __name__ == '__main__':
     print(f'* detection model with {args.model_path} initialized')
 
     # initialize optimizer & scheduler
-    loss_fn = nn.CrossEntropyLoss(ignore_index=pad_num).to(args.device)
+    loss_fn = nn.CrossEntropyLoss().to(args.device)
     optimizer = init_optimizer(type='adamw', model=model,
                                lr=args.lr, weight_decay=args.weight_decay)
     if args.use_scheduler:
